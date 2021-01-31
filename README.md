@@ -110,3 +110,22 @@ blowcurve.crypt.IncorrectPadding: incorrect padding
 ```
 
 The cause of the exception above is because the incorrect key results in incorrect decrypted data, therefore causing an incorrect padding. (There is chance that this exception won't occur, but the result will still be malformed.)
+
+## Testing
+
+The `test.py` file contains unittest test cases:
+```
+$ python -m unittest --verbose blowcurve.test
+testEncrypt (blowcurve.test.BlowcurveTestCase) ... ok
+testSign (blowcurve.test.BlowcurveTestCase) ... ok
+testEncrypt (blowcurve.test.CryptTestCase) ... ok
+testPad (blowcurve.test.CryptTestCase) ... ok
+testNoRemoteKey (blowcurve.test.KeysTestCase) ... ok
+testSecret (blowcurve.test.KeysTestCase) ... ok
+testSign (blowcurve.test.KeysTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.179s
+
+OK
+```
